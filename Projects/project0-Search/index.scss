@@ -1,0 +1,111 @@
+body {
+    font-family: arial,sans-serif;
+    .nav-bar{
+        text-align: right;
+        .nav-bar li{
+            padding: 5px;
+            display:inline-block;
+        }
+    }
+}
+%message{
+    display:inline-block;
+    padding:10px;
+    color:black;
+}
+a{
+    @extend %message;
+    text-decoration:None;
+}
+a:hover{
+    @extend %message;
+    text-decoration: underline;
+}
+.verticle-center{
+    padding:150px;
+}
+.search-bar{
+    border-width: 1px;
+    border-radius: 20px;
+    display: block;
+    margin:10px;
+    padding:10px;
+    width:400px;
+    border-style:solid;
+    border-color:#888888;
+}
+%message1{
+    background-color: #F8F9FA;
+    border:1px solid #f8f9fa;
+    border-radius:4px;
+    color:#3c4043;
+    font-size: 14px;
+    margin:11px 4px;
+    padding:0px 16px;
+    line-height: 27px;
+    height:36px;
+    min-width:54px;
+    cursor: pointer;
+    user-select: none;
+}
+.search-button{
+    @extend %message1;
+}
+@media only screen and (max-width:500px){
+    .searchbar{
+        width:90%
+    }
+}
+@media only screen and (max-height:500px){
+    .verticle-center{
+        padding:15px;
+    }
+}
+tr,td{
+    padding:10px;
+}
+.searchbar-sm{
+    width:300px;
+    border-width:1px;
+    border-radius: 5px;
+    margin:5px;
+    padding:5px;
+    display:block;
+}
+.form-body{
+    border-bottom:1px solid #ebebeb;
+    padding:10px;
+}
+.table tr td .search-button{
+    float:right;
+}
+.img{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    width: auto;
+    height: 92px;
+    aspect-ratio: auto 272 / 92;
+}
+.img-img{
+    color: #4285f4;
+    font: 16px/16px roboto-regular, arial, sans-serif;
+    position: absolute;
+    left: 215px;
+    bottom: 0;
+    white-space: nowrap;
+}
+p{
+    padding: 10px;
+}
+.appbar{
+    color: #d93025;
+    font-size: 20px;
+    margin: 25px 35px;
+}
+#small-google{
+    height:24px;
+    width:74px;
+    display:inline-block;
+}
