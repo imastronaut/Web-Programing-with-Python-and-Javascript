@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Page</title>
+        <style>
+            .form-field{
+                align-items: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+        {% if warning %}
+            Entry already exists
+        {% endif %}
+        <form action="{% url 'newpage' %}" method=POST>
+            {% csrf_token %}
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="Enter Title" class = "text-field" class="form-field">
+            <label for="content">Content</label>
+            <textarea name="content" palceholder="Enter Content" class="textarea" rows="4" cols="50" class="form-field"></textarea>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
