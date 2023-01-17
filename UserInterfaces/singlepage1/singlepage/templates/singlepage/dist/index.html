@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+      </style>
+      <script>
+        function showSection(section){
+            fetch(`sections/${section}`)
+            .then(response=>response.text())
+            .then(text=>{
+                console.log(text);
+                document.querySelector('#content').innerHTML = text;
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelectorAll('button').forEach(button=>{
+                button.onclick = function(){
+                    showSection(this.dataset.id);
+                }
+            })
+        })
+      </script>
+</head>
+<body>
+    <button data-id="1">Section1</button>
+    <button data-id="2">Section2</button>
+    <button data-id="3">section3</button>
+    <div id="content"></div>
+</body>
+</html>
